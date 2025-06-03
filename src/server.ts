@@ -6,7 +6,7 @@ import cookieParser from 'cookie-parser'
 import compression from 'compression'
 
 // DB
-import connectDB from './db/db'
+import connectDB from './db/connect'
 
 // App config
 const PORT = process.env.PORT || 5000
