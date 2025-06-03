@@ -57,7 +57,7 @@ const login = asyncWrapper( async ( request: Request, response: Response ) => {
   await user.save()
 
   response.cookie( 
-    'NARESH_AUTH', // name of the cookie
+    process.env.COOKIE_NAME as string, // name of the cookie
     user.authentication.sessionToken, // value of the cookie
     { domain: 'localhost', // domain of the cookie
       path: '/' // path of the cookie
