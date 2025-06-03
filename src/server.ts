@@ -6,7 +6,10 @@ import cookieParser from 'cookie-parser'
 import compression from 'compression'
 
 // DB
-import connectDB from './db/connect'
+import connectDB from './db/connect.js'
+
+// Routes
+import router from './router/index.js'
 
 // App config
 const PORT = process.env.PORT || 5000
@@ -19,6 +22,9 @@ app.use( cookieParser() )
 app.use( bodyParser.json() )
 
 const server = http.createServer( app )
+
+// Routes
+app.use( '/api/v1', router )
 
 const start = async () => {
   try {
