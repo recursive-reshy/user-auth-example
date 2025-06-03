@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const UserSchema = new mongoose.Schema( {
   username: { type: String, required: true, unique: true },
-  email: { type: String, required: true, unique: true },
+  email: { type: String, required: true },
   authentication: {
     password: { type: String, required: true, select: false }, // select: false means that the password is not included in the response
     salt: { type: String, required: true, select: false }, // salt is used to hash the password
